@@ -1,0 +1,11 @@
+{
+"forge_marker": 1,
+"defaults": {
+	"model": "minecraft:cube_all",
+	"transform": "forge:default-block"
+},
+	"variants": {
+		"normal": [{ "textures": { "all": "xp_ore:blocks/xp_ore_drained" } }],
+		"inventory": [{ "textures": { "all": "xp_ore:blocks/xp_ore_drained" } }]
+	}
+}

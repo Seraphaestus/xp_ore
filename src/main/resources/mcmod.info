@@ -1,0 +1,16 @@
+[
+{
+  "modid": "xp_ore",
+  "name": "XP Ore",
+  "description": "A small feature to allow a different type of XP farm and encourage automation!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Seraphaestus"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
