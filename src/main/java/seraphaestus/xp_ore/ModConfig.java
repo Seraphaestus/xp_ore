@@ -2,7 +2,6 @@ package seraphaestus.xp_ore;
 
 import org.apache.logging.log4j.Level;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Configuration;
 import seraphaestus.xp_ore.proxy.CommonProxy;
 
@@ -21,7 +20,7 @@ public class ModConfig {
         Configuration cfg = CommonProxy.config;
         try {
             cfg.load();
-            initMultiCraftingConfig(cfg);
+            initConfig(cfg);
         } catch (Exception e1) {
             ModMain.logger.log(Level.ERROR, "Problem loading config file!", e1);
         } finally {
@@ -31,10 +30,10 @@ public class ModConfig {
         }
     }
 
-    private static void initMultiCraftingConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_GENERAL, I18n.format("xp_ore.config.general_category.description"));
-        numOreTiers = cfg.getInt("numOreTiers", CATEGORY_GENERAL, numOreTiers, 0, 10, I18n.format("xp_ore.config.num_ore_tiers.description"));
-        xpBase = cfg.getInt("xpBase", CATEGORY_GENERAL, xpBase, 0, Integer.MAX_VALUE, I18n.format("xp_ore.config.xp_base.description"));
-        xpMultiplier = cfg.getInt("xpMultiplier", CATEGORY_GENERAL, xpMultiplier, 0, Integer.MAX_VALUE, I18n.format("xp_ore.config.xp_multiplier.description"));
+    private static void initConfig(Configuration cfg) {
+        cfg.addCustomCategoryComment(CATEGORY_GENERAL, "Configure the mod");
+        numOreTiers = cfg.getInt("numOreTiers", CATEGORY_GENERAL, numOreTiers, 0, 10, "How many different tiers of ore there wll be. Maximum of 10.");
+        xpBase = cfg.getInt("xpBase", CATEGORY_GENERAL, xpBase, 0, Integer.MAX_VALUE, "The base amount of xp that the first tier of ore starts with.");
+        xpMultiplier = cfg.getInt("xpMultiplier", CATEGORY_GENERAL, xpMultiplier, 0, Integer.MAX_VALUE, "Each tier of ore will increase the xp gained by this amount.");
     }
 }
